@@ -20,24 +20,34 @@ function App() {
       setResult("");
       return;
     }
-    else {
-      setmsg("Success : Your result is shown above!");
+    else { 
       calculate(e);
     }
   }
 
   function calculate(e) {
+    let ans ;
     if (e.target.innerText == "+") {
-      setResult(Number(num1) + Number(num2));
+      ans = Number(num1) + Number(num2);
     }
     else if (e.target.innerText == "-") {
-      setResult(Number(num1) - Number(num2));
+      ans = Number(num1) - Number(num2);
     }
     else if (e.target.innerText == "*") {
-      setResult(Number(num1) * Number(num2));
+      ans = Number(num1) * Number(num2);
     }
     else {
-      setResult(Number(num1) / Number(num2));
+      ans = Number(num1) / Number(num2);
+    }
+
+    if(isNaN(ans)){
+      setmsg("Error :  Please enter a valid number");
+      setResult("");
+    }
+    
+    else{
+      setmsg("Success : Your result is shown above!");
+      setResult(ans);
     }
   }
 
