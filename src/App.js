@@ -10,7 +10,7 @@ function App() {
 
 
   function validation(e) {
-    if (num1 == "") {
+    if (num1 == "") {     
       setmsg("Error :  Num1 cannot be empty");
       setResult("");
       return;
@@ -44,7 +44,7 @@ function App() {
       setmsg("Error :  Please enter a valid number");
       setResult("");
     }
-    
+
     else{
       setmsg("Success : Your result is shown above!");
       setResult(ans);
